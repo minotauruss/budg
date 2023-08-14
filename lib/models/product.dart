@@ -1,4 +1,4 @@
-import 'dart:ui';
+
 
 import 'package:hive/hive.dart';
 /* flutter pub run build_runner build --delete-conflicting-outputs */
@@ -24,9 +24,11 @@ class Product extends HiveObject{
 
   @HiveField(5)
   String category;
-
- @HiveField(6)
+  
+  @HiveField(6)
   String quantity;
+
+
 
 
 
@@ -37,7 +39,7 @@ class Product extends HiveObject{
     required this.brand,
     required this.date,
     required this.category,
-    required this.quantity,
-  
+    required this.quantity
+    
   });
 }

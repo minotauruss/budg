@@ -1,4 +1,4 @@
-import 'package:budg/models/product.dart';
+
 import 'package:budg/repository/repositoryAbstract.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -22,7 +22,7 @@ class ProductRepository extends RepositoryAbstract{
   }
 
   @override
-  void saveData(String tableName,String productname, Product product){
+  void saveData(String tableName,String productname, var product ){
     var box =  Hive.box(tableName);
      box.put(productname, product);
     
@@ -41,7 +41,7 @@ class ProductRepository extends RepositoryAbstract{
 }
 
   @override
-  void updateData(String tableName,String productname, Product product){
+  void updateData(String tableName,String productname, var product){
      var box = Hive.box(tableName);
      box.put(productname, product);
 
